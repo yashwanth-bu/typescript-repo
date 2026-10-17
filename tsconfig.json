@@ -1,0 +1,85 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+
+    // Specifies the root directory containing the TypeScript source files.
+    "rootDir": "./src",
+
+    // Specifies the output directory where compiled JavaScript files are generated.
+    "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+
+    //It configures TypeScript to follow Node.js's module system rules, supporting both CommonJS and ES Modules depending on your file extensions and package.json configuration.
+    "module": "nodenext",
+
+    // Specifies the JavaScript version to target during compilation.
+    // Controls the JavaScript output version.
+    // "ESNext" preserves modern JavaScript features supported by the latest ECMAScript standard.
+    "target": "esnext",
+
+    // For Node.js projects, @types/node provides Node.js-specific types such as process, fs, and path.
+    // "types": ["node"] tells TypeScript to include Node.js type definitions from @types/node.
+    // Install Node.js type definitions using: npm install -D @types/node
+    "types": ["node"],
+
+    // provides type definitions for modern JavaScript features, such as newer built-in methods and APIs, such as Promise, Map, and Array.
+    "lib": ["esnext"],
+
+    
+
+    // Other Outputs
+
+    // Generates source map files (.js.map) to help debug the original TypeScript source code.
+    // you write app.ts, compile it into app.js, and run it. If an error occurs in app.js, your debugger can use the source map to show you the corresponding line in app.ts.
+    // Helps debug generated JavaScript.
+    "sourceMap": true,
+
+    // Generates TypeScript declaration files (.d.ts) that describe the types of exported code.
+    // Project 1: Math library
+    // math.ts contains the actual implementation.
+    // The TypeScript compiler generates math.js (executable code)
+    // and math.d.ts (type declarations for other projects).
+
+    // Project 2: Application
+    // Imports add() from the math library.
+    // TypeScript uses math.d.ts to check types during development,
+    // while Node.js executes the actual JavaScript from math.js.
+    // math.d.ts provides type information to TypeScript tools only.
+    "declaration": true,
+    // Connects generated type declarations back to original TypeScript source (d.ts.map)
+    // helps Project 2's developer navigate from a declaration in math.d.ts to the original TypeScript source file, math.ts.
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true,
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+
+    // prevents JavaScript output from being generated if TypeScript reports compilation errors.
+    "noEmitOnError": true, 
+    // prevents JavaScript output from being generated at all, even when there are no errors.
+    // "noEmit": true
+  },
+
+  // Includes all TypeScript files inside the src directory and its subdirectories.
+  "include": ["src/**/*.ts"]
+}

@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Compiled output
+dist/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+#ignores files created by npm when an error occurs during package installation or execution.
+npm-debug.log*
+
+# TypeScript build files
+*.tsbuildinfo
+
+# Editor and OS files
+.vscode/
+
+# folder created by JetBrains IDEs, such as IntelliJ IDEA and WebStorm. It stores editor settings and project configuration.
+.idea/
+
+# hidden system file created by macOS (Apple computers) to store folder settings, such as icon positions and view preferences.
+.DS_Store
+# hidden system file created by Windows File Explorer to store thumbnail previews of images and videos.
+Thumbs.db
